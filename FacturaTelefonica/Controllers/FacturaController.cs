@@ -9,13 +9,20 @@ namespace FacturaTelefonica.Controllers
         FacturaDatos _FacturaDatos = new FacturaDatos();
         public IActionResult ListarFacturas()
         {
-            return View();
+            var oLista = _FacturaDatos.ListarFacturas("");
+            return View(oLista);
         }
         [HttpPost]
-        public IActionResult Listar(string numero)
+        public IActionResult ListarFacturas(string numero)
         {
             var oLista = _FacturaDatos.ListarFacturas(numero);
             return View(oLista);
+        }
+        public IActionResult DetallesFactura()
+        {  
+            var olista = _FacturaDatos.ListarDetalleFactura();
+            // solo la vista ya que es un catalogo
+            return View();
         }
     }
 }

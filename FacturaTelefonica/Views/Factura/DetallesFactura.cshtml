@@ -1,0 +1,51 @@
+﻿@model DetalleElementosCobroModel
+@{
+    ViewData["Title"] = "DetallesFactura";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalles</h1>
+<div class="card">
+    <div class="card-body">
+        <table class="table table-bordered" bgcolor="white" width="700">
+            <thead>
+                <tr>
+                    <th>Tarifa Base</th>
+                    <th>Cantidad de minutos en exceso a minutos en tarifa básica</th>
+                    <th>
+                        Cantidad de giga en uso de datos en exceso a tarifa básica.
+                    </th>
+                    <th>
+                        Cantidad de minutos de llamadas a familiares
+                    </th>
+                    <th>
+                        Cobro por 911
+                    </th>
+                    <th>Cobro por 110</th>
+                    <th>
+                        Total cobro por llamadas a números 900
+                    </th>
+                    <th>Total cobro por llamadas a números 800</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                    <tr>
+                        <td>@Model.TarifaBasica</td>
+                        <td>@Model.QMinutosExceso</td>
+                        <td>@Model.QGigasExceso</td>
+                        <td>@Model.QFamiliar</td>
+                        <td>@Model.Llamada911</td>
+                        <td>@Model.Llamada110</td>
+                        <td>@Model.Llamada900</td>
+                        <td>@Model.Llamada800</td>
+
+                   </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+

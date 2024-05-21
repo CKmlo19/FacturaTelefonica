@@ -25,6 +25,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Factura}/{action=Portal}/{id?}");
+    pattern: "{controller=Factura}/{action=ListarFacturas}/{id?}");
 
 app.Run();

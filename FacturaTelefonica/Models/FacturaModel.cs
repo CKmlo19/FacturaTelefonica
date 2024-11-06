@@ -5,6 +5,7 @@
         public int Id { get; set; }
         public int IdContrato { get; set; }
         public int IdEstado { get; set; }
+        public string? Estado { get; set; }
         public DateTime FechaEmision { get; set; }
         public decimal TotalAPagar{ get; set; }
     }

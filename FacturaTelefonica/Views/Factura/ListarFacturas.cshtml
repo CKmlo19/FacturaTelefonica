@@ -1,0 +1,47 @@
+﻿@model List<FacturaModel>
+@{
+    ViewData["Title"] = "Portal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Buscar un Numero Telefonico</h1>
+<div class="card">
+    <div class="card-body">
+        <form asp-action="ListarFacturas" asp-controller="Factura" method="post" class="row g-3 align-items-center">
+            <div class="col">
+                <label for="campo" class="visually-hidden"> Buscar</label>
+                <input type="text" id="campo" name="campo" class="form-control" placeholder="Filtrar">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3"><i class="bi bi-search"></i> Buscar</button>
+            </div>
+        </form>
+        <table class="table table-bordered" bgcolor="white" width="700">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Fecha de Emision</th>
+                    <th>Total A Pagar</th>
+                    <th>Estado</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.FechaEmision</td>
+                        <td>@item.TotalAPagar</td>
+                        <td>@item.Estado</td>
+                        <td>
+                            <a asp-action="DetalleFactura" asp-controller="Factura" asp-route-id="@item.Id" class="btn btn-primary">Detalle</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+           
+        </table>
+    </div>
+</div>
+
